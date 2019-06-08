@@ -92,18 +92,20 @@ window.requestAnimFrame = (function(){
    };
 })();
 
-var can = document.getElementById("c"),
-		//ctx = can.getContext("2d"),
-		p = [],
+var can = document.getElementById("c");
+console.log(can);
+
+		ctx = can.getContext("2d");
+		p = [];
 		num = 0;
 
 // Get canvas and set size to window size
-//can.width = window.innerWidth - 21;
-//can.height = window.innerHeight - 21;
+can.width = window.innerWidth - 21;
+can.height = window.innerHeight - 21;
 
 /** Add a new ball object */
 function addBall (e) {
-	p[num] = new addBall();
+	p[num] = new Ball();
 	
 	if (e) {
 		p[num].pos = [e.clientX, e.clientY];
